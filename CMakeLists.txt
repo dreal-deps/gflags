@@ -322,7 +322,7 @@ foreach (TYPE IN ITEMS STATIC SHARED)
             list (APPEND include_dirs "$<INSTALL_INTERFACE:${INCLUDE_INSTALL_DIR}>")
           endif ()
           target_include_directories (gflags${opts}-${type}
-            PUBLIC  "${include_dirs}"
+            PUBLIC  "$<INSTALL_INTERFACE:${include_dirs}>"
             PRIVATE "${PROJECT_SOURCE_DIR}/src;${PROJECT_BINARY_DIR}/include/${GFLAGS_INCLUDE_DIR}"
           )
         endif ()
